@@ -1,6 +1,10 @@
+#dir
 /target
 /Cargo.lock
-/firebase.json
-/.firebaserc
-/firebase-debug.log
+
 /.firebase
+
+#file
+*.log
+.firebaserc
+firebase.json
