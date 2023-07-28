@@ -8,7 +8,8 @@
 <body>
     <h1>mandelbrot set</h1>
     <canvas id="canvas"></canvas>
-    <label>計算回数<input type="range" min="100" max="2000" step="100" value="100" id="noc"></label>
+    <p>zoom : mousewheel</p>
+    <p>move : drag and drop （まだバグあり）</p>
     <p id="info"></p>
     <p id="scale_width"></p>
     <p id="scale_height"></p>
@@ -28,12 +29,10 @@
         let draw_x = -2;
         let draw_y = -2;
         const canvas = document.getElementById("canvas");
-        const noc = document.getElementById("noc")
         let ctx = canvas.getContext("2d");
         function draw(){
             const start = performance.now();
             // 実行時間を計測した処理
-            console.log(noc.value);
             let a = new Uint8ClampedArray(mandelblot_set(width, height, scaleX, scaleY, draw_x, draw_y,200))
             const Image = new ImageData(a, width);
             let scale_width = document.getElementById("scale_width");
