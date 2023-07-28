@@ -1,2 +1,6 @@
 /target
 /Cargo.lock
+/firebase.json
+/.firebaserc
+/firebase-debug.log
+/.firebase
