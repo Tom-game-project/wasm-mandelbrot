@@ -1,0 +1,37 @@
+[debug] [2023-07-25T10:32:35.511Z] ----------------------------------------------------------------------
+[debug] [2023-07-25T10:32:35.513Z] Command:       D:\program\node.exe C:\Users\kimim\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2023-07-25T10:32:35.513Z] CLI Version:   12.4.5
+[debug] [2023-07-25T10:32:35.513Z] Platform:      win32
+[debug] [2023-07-25T10:32:35.513Z] Node Version:  v18.15.0
+[debug] [2023-07-25T10:32:35.514Z] Time:          Tue Jul 25 2023 19:32:35 GMT+0900 (GMT+09:00)
+[debug] [2023-07-25T10:32:35.514Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-07-25T10:32:35.642Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-07-25T10:32:35.642Z] > authorizing via signed-in user (tom.ipynb@gmail.com)
+[debug] [2023-07-25T10:32:35.643Z] [iam] checking project wasm-mandelbrot for permissions ["firebase.projects.get"]
+[debug] [2023-07-25T10:32:35.645Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/wasm-mandelbrot:testIamPermissions [none]
+[debug] [2023-07-25T10:32:35.645Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/wasm-mandelbrot:testIamPermissions x-goog-quota-user=projects/wasm-mandelbrot
+[debug] [2023-07-25T10:32:35.645Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/wasm-mandelbrot:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-07-25T10:32:36.337Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/wasm-mandelbrot:testIamPermissions 200
+[debug] [2023-07-25T10:32:36.337Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/wasm-mandelbrot:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-07-25T10:32:36.338Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/wasm-mandelbrot [none]
+[debug] [2023-07-25T10:32:36.676Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/wasm-mandelbrot 200
+[debug] [2023-07-25T10:32:36.676Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/wasm-mandelbrot {"projectId":"wasm-mandelbrot","projectNumber":"347462554751","displayName":"wasm-Mandelbrot","name":"projects/wasm-mandelbrot","resources":{"hostingSite":"wasm-mandelbrot"},"state":"ACTIVE","etag":"1_e7558943-9823-45e5-9c3f-85b4d55b0948"}
+[info] 
+[info] === Serving from 'D:\ドキュメント\マンデルブロ集合\マンデルブロ集合(rust)\wasm_mandelbrot'...
+[info] 
+[debug] [2023-07-25T10:32:36.682Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/wasm-mandelbrot/sites 
+[debug] [2023-07-25T10:32:37.343Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/wasm-mandelbrot/sites 200
+[debug] [2023-07-25T10:32:37.343Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/wasm-mandelbrot/sites {"sites":[{"name":"projects/wasm-mandelbrot/sites/wasm-mandelbrot","defaultUrl":"https://wasm-mandelbrot.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-07-25T10:32:37.343Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/wasm-mandelbrot/webApps/-/config [none]
+[debug] [2023-07-25T10:32:38.026Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/wasm-mandelbrot/webApps/-/config 200
+[debug] [2023-07-25T10:32:38.027Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/wasm-mandelbrot/webApps/-/config {"projectId":"wasm-mandelbrot","storageBucket":"wasm-mandelbrot.appspot.com","apiKey":"AIzaSyCg7wVaYngb-u-1MjNgJeyYyVFgoz1Xt_E","authDomain":"wasm-mandelbrot.firebaseapp.com","messagingSenderId":"347462554751"}
+[debug] [2023-07-25T10:32:38.035Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/wasm-mandelbrot [none]
+[debug] [2023-07-25T10:32:38.327Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/wasm-mandelbrot 200
+[debug] [2023-07-25T10:32:38.327Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/wasm-mandelbrot {"projectId":"wasm-mandelbrot","projectNumber":"347462554751","displayName":"wasm-Mandelbrot","name":"projects/wasm-mandelbrot","resources":{"hostingSite":"wasm-mandelbrot"},"state":"ACTIVE","etag":"1_e7558943-9823-45e5-9c3f-85b4d55b0948"}
+[info] i  hosting[wasm-mandelbrot]: Serving hosting files from: public {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mpublic\u001b[22m"}}
+[info] +  hosting[wasm-mandelbrot]: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[info] i  hosting: ::1 - - [25/Jul/2023:10:32:50 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [25/Jul/2023:10:32:50 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [25/Jul/2023:10:32:50 +0000] "GET /pkg/wasm_mandelbrot.js HTTP/1.1" 200 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [25/Jul/2023:10:32:50 +0000] \"GET /pkg/wasm_mandelbrot.js HTTP/1.1\" 200 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [25/Jul/2023:10:32:50 +0000] "GET /favicon.ico HTTP/1.1" 404 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [25/Jul/2023:10:32:50 +0000] \"GET /favicon.ico HTTP/1.1\" 404 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [25/Jul/2023:10:32:50 +0000] "GET /pkg/wasm_mandelbrot_bg.wasm HTTP/1.1" 200 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [25/Jul/2023:10:32:50 +0000] \"GET /pkg/wasm_mandelbrot_bg.wasm HTTP/1.1\" 200 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36\""}}
