@@ -3,8 +3,7 @@
 
 [🔗wasm-madelbrot](https://wasm-mandelbrot.web.app/ "wasm-madelbrot")
 
-powerd by
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/WebAssembly_Logo.svg" width="60">
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/WebAssembly_Logo.svg" width="60">![マンデルブロ集合イメージ](image/thumbnail(60x60).png "thumbnail")
 
 ## How To Use
 
