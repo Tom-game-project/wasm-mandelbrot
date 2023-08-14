@@ -18,8 +18,11 @@
     <p id="mouse_x"></p>
     <p id="mouse_y"></p>
     <p id="draw_time"></p>
+
+
     <script type="module">
         import init,{ mandelblot_set} from "./pkg/wasm_mandelbrot.js";
+
         const width = 512;
         const height = 512;
 
@@ -28,13 +31,25 @@
         
         let draw_x = -2;
         let draw_y = -2;
+
         const canvas = document.getElementById("canvas");
         let ctx = canvas.getContext("2d");
+        
         function draw(){
+            //マンデルブロ集合をキャンバス内に表示する
             const start = performance.now();
             // 実行時間を計測した処理
-            let a = new Uint8ClampedArray(mandelblot_set(width, height, scaleX, scaleY, draw_x, draw_y,200))
+            let a = new Uint8ClampedArray(
+                mandelblot_set(
+                    width, height,//描画する時の実際の幅と高さ
+                    scaleX, scaleY,//スケール
+                    draw_x, draw_y,//
+                    200  //計算回数
+                )
+            )
             const Image = new ImageData(a, width);
+
+            //情報表示
             let scale_width = document.getElementById("scale_width");
             let scale_height = document.getElementById("scale_height");
             let drawX = document.getElementById("draw_x");
@@ -43,8 +58,10 @@
             scale_height.innerHTML = "height:"+scaleY;
             drawX.innerHTML = "左上real:" + draw_x;
             drawY.innerHTML = "左上imag:" + draw_y;
+            
             canvas.width = width;
             canvas.height = height;
+            
             ctx.putImageData(Image, 0, 0, 0, 0, width, height);
 
             const end = performance.now();
@@ -102,6 +119,7 @@
                 let imageY = 0;
 
                 function putPaddingImage(deltaX,deltaY,drawX,drawY){
+                    //余白を埋めるマンデルブロ集合のイメージ
                     console.log(`${drawX},${drawY}`)
                     //delta userのマウスの変化のさせ方
                     //draw マウスが上がった時に用意している描画座標
