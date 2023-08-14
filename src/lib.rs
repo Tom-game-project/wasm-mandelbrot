@@ -113,7 +113,7 @@ pub fn mandelblot_set(
     //height:額縁の高さ
     //draw_width:複素数平面上出の描画範囲幅
     //draw_height:複素数平面上での描画範囲高さ
-    let mut rlist:Vec<u8>=vec![];
+    let mut rlist:Vec<u8>=Vec::new();
     let z0 = Complex::new(0.0,0.0);
     let mut mund = Mandelblot::new(z0,noc);
     for i in (0..width*height*4).step_by(4){
@@ -176,7 +176,7 @@ pub fn mandelblot_set2(
     //height:額縁の高さ
     //draw_width:複素数平面上出の描画範囲幅
     //draw_height:複素数平面上での描画範囲高さ
-    let mut rlist:Vec<u8>=vec![];
+    let mut rlist:Vec<u8>=Vec::new();
     let z0 = Complex::new(0.0,0.0);
     let mut mund = Mandelblot::new(z0,noc);
     for i in (0..width*height*4).step_by(4){
