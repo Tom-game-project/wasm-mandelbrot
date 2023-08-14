@@ -1,4 +1,4 @@
-
+//v1
 import init, { mandelblot_set } from "./pkg/wasm_mandelbrot.js";
 
 const width = 512;
