@@ -112,8 +112,8 @@ pub fn mandelblot_set(width:u32,height:u32,draw_width:f64,draw_height:f64,draw_x
     let mut mund = Mandelblot::new(z0,noc);
     for i in (0..width*height*4).step_by(4){
         let j = i/4;
-        let x = j%height;
-        let y = j/width;
+        let x = j%width;
+        let y = j/height;
         let z1 = Complex::new(
             (x as f64*draw_width + (draw_x*(width  as f64)))/(width as f64),
             (y as f64*draw_height + (draw_y*(height as f64)))/(height as f64)

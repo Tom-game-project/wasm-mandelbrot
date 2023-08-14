@@ -50,6 +50,7 @@ function draw() {
 init().then(() => {
     draw()
 });
+
 canvas.addEventListener(
     "click",
     () => {
@@ -59,7 +60,8 @@ canvas.addEventListener(
         let cmp_y = draw_y + (event.offsetY / height) * scaleY;
         mouseX.innerHTML = "mouse_real:" + cmp_x;
         mouseY.innerHTML = "mouse_imag:" + cmp_y;
-    })
+})
+
 canvas.addEventListener(
     "mousewheel",
     (event) => {
@@ -86,7 +88,6 @@ canvas.addEventListener(
         draw()
     });
 
-
 canvas.addEventListener(
     "mousedown",
     (event) => {
@@ -111,6 +112,7 @@ canvas.addEventListener(
             //絶対画角上の描画スタート位置
             const besideImageX = (deltaX < 0 ? width + deltaX : 0);
             const besideImageY = (deltaY < 0 ? 0 : deltaY);
+
             const besideData = new Uint8ClampedArray(
                 mandelblot_set(
                     besideWidth, besideHeight,
