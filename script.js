@@ -19,18 +19,20 @@ function draw() {
     //マンデルブロ集合をキャンバス内に表示する
     const start = performance.now();
     // 実行時間を計測した処理
-    let a = new Uint8ClampedArray(
-        mandelblot_set(
-            width, height/2,//描画する時の実際の幅と高さ
-            
-            scaleX, scaleY/2,//スケール
+    let data = mandelblot_set(
+        width, height / 2,//描画する時の実際の幅と高さ
 
-            // スケールを変えることによってshape(512/2,512/2)の画像データが返却された
-            // 実際に期待する形状の画像データはshape(512/2,512)である。
-            // lib.rsに問題がある可能性がある
-            draw_x, draw_y,//
-            200  //計算回数
-        )
+        scaleX, scaleY / 2,//スケール
+
+        // スケールを変えることによってshape(512/2,512/2)の画像データが返却された
+        // 実際に期待する形状の画像データはshape(512/2,512)である。
+        // lib.rsに問題がある可能性がある
+        draw_x, draw_y,//
+        200  //計算回数
+    )
+    console.log(data);
+    let a = new Uint8ClampedArray(
+        data
     )
     const Image = new ImageData(a, width);
 

@@ -107,6 +107,7 @@ pub fn mandelblot_set(width:u32,height:u32,draw_width:f64,draw_height:f64,draw_x
     //height:額縁の高さ
     //draw_width:複素数平面上出の描画範囲幅
     //draw_height:複素数平面上での描画範囲高さ
+    //noc:number of count計算の回数
     let mut rlist:Vec<u8>=vec![];
     let z0 = Complex::new(0.0,0.0);
     let mut mund = Mandelblot::new(z0,noc);
@@ -115,9 +116,11 @@ pub fn mandelblot_set(width:u32,height:u32,draw_width:f64,draw_height:f64,draw_x
         let x = j%height;
         let y = j/width;
         let z1 = Complex::new(
-            (x as f64*draw_width + (draw_x*(width  as f64)))/(width as f64),
-            (y as f64*draw_height + (draw_y*(height as f64)))/(height as f64)
+            x as f64*draw_width/width as f64 + draw_x as f64,
+            y as f64*draw_height/height as f64 + draw_y as f64
         );
+
+
         let counter =mund.counter(&z1);
         if counter>=noc{
                 rlist.push(0);
