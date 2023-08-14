@@ -20,9 +20,9 @@ function draw() {
     const start = performance.now();
     // 実行時間を計測した処理
     let data = mandelblot_set(
-        width, height/3 ,//描画する時の実際の幅と高さ
+        width/2, height/2 ,//描画する時の実際の幅と高さ
 
-        scaleX, scaleY/3**2,//スケール
+        scaleX /2**2, scaleY/2**2,//スケール
 
         // スケールを変えることによってshape(512/2,512/2)の画像データが返却された
         // 実際に期待する形状の画像データはshape(512/2,512)である。
