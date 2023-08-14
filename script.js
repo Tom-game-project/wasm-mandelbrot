@@ -1,5 +1,5 @@
 //v1
-import init, { mandelblot_set } from "./pkg/wasm_mandelbrot.js";
+import init, { mandelblot_set,mandelblot_set2 } from "./pkg/wasm_mandelbrot.js";
 
 const width = 512;
 const height = 512;
@@ -18,7 +18,7 @@ function draw() {
     const start = performance.now();
     // 実行時間を計測した処理
     let a = new Uint8ClampedArray(
-        mandelblot_set(
+        mandelblot_set2(
             width, height,//描画する時の実際の幅と高さ
             scaleX, scaleY,//スケール
             draw_x, draw_y,//
@@ -114,7 +114,7 @@ canvas.addEventListener(
             const besideImageY = (deltaY < 0 ? 0 : deltaY);
 
             const besideData = new Uint8ClampedArray(
-                mandelblot_set(
+                mandelblot_set2(
                     besideWidth, besideHeight,
                     besideDrawWidth, besideDrawHeight,
                     besideDrawX, besideDrawY, 200
@@ -137,7 +137,7 @@ canvas.addEventListener(
             const updownsideImageX = 0;//固定。。。定数
             const updownsideImageY = (deltaY < 0 ? height + deltaY : 0);
             const updownsideData = new Uint8ClampedArray(
-                mandelblot_set(
+                mandelblot_set2(
                     updownWidth, updownHeight,
                     updownDrawWidth, updownDrawHeight,
                     updownDrawX, updownDrawY, 200
