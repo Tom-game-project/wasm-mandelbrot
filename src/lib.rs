@@ -100,7 +100,76 @@ fn hsv_to_rgb(h: f32) -> (u8, u8, u8) {
 }
 
 #[wasm_bindgen]
-pub fn mandelblot_set(width:u32,height:u32,draw_width:f64,draw_height:f64,draw_x:f64,draw_y:f64,noc:u32)->Vec<u8>{
+pub fn mandelblot_set(
+    width:u32,height:u32,
+    draw_width:f64,draw_height:f64,
+    draw_x:f64,draw_y:f64,
+    noc:u32
+    )->Vec<u8>
+    {
+    //ex.mandelblot_set(512,512,2.0,2.0,-2.0,1.0)
+    //imageを使用しない方法
+    //width:額縁の幅
+    //height:額縁の高さ
+    //draw_width:複素数平面上出の描画範囲幅
+    //draw_height:複素数平面上での描画範囲高さ
+    let mut rlist:Vec<u8>=vec![];
+    let z0 = Complex::new(0.0,0.0);
+    let mut mund = Mandelblot::new(z0,noc);
+    for i in (0..width*height*4).step_by(4){
+        let j = i/4;
+        let x = j%width;
+        let y = j/height;
+        let z1 = Complex::new(
+            (x as f64*draw_width + (draw_x*(width  as f64)))/(width as f64),
+            (y as f64*draw_height + (draw_y*(height as f64)))/(height as f64)
+        );
+        let counter =mund.counter(&z1);
+        if counter>=noc{
+                rlist.push(0);
+                rlist.push(0);
+                rlist.push(0);
+                rlist.push(255);
+        }else{
+                //let (r, g, b) = hsv_to_rgb(360.0*counter as f32/noc as f32);
+                if counter%2==0{
+                rlist.push(255);
+                rlist.push(0);
+                rlist.push(255);
+                rlist.push(255);
+                }else{
+                rlist.push(255);
+                rlist.push(255);
+                rlist.push(0);
+                rlist.push(255);
+
+                }
+        }
+        //if mund.in_set(&z1){
+        //    rlist.push(255);
+        //    rlist.push(0);
+        //    rlist.push(0);
+        //    rlist.push(255);
+        //}else{
+        //    rlist.push(0);
+        //    rlist.push(255);
+        //    rlist.push(0);
+        //    rlist.push(255);
+        //}
+    }
+    rlist//値を返却
+}
+
+
+#[wasm_bindgen]
+pub fn mandelblot_set2(   
+    width:u32,height:u32,
+    draw_width:f64,draw_height:f64,
+    draw_x:f64,draw_y:f64,
+    noc:u32
+    )->Vec<u8>
+    {
+    //大幅変更版
     //ex.mandelblot_set(512,512,2.0,2.0,-2.0,1.0)
     //imageを使用しない方法
     //width:額縁の幅
