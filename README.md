@@ -1,7 +1,7 @@
 
 # wasm-madelbrot
 
-[🔗wasm-madelbrot](https://wasm-mandelbrot.web.app/ "wasm-madelbrot")
+[🔗wasm-madelbrot](https://tom-game-project.github.io/wasm-mandelbrot/)
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/WebAssembly_Logo.svg" width="60">![マンデルブロ集合イメージ](image/thumbnail(60x60).png "thumbnail")
 
@@ -16,8 +16,8 @@ move : drag & drop
 
 | |chrome|edge|firefox|safari|
 |----| ---- | ----  |----| ---- |
-|zoom (mousewheel)|ok|ok|x|x|
-|move (drag & drop)|ok|ok|ok|x|
+|zoom (wheel)|ok|ok|ok|x|
+|move (drag & drop)|x|x|x|x|
 
 ## bugs
 
