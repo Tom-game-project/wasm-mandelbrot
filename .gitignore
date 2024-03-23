@@ -8,3 +8,9 @@
 *.log
 .firebaserc
 firebase.json
+
+
+# npm 
+
+/package-lock.json
+/node_modules
